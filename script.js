@@ -565,8 +565,7 @@ $(document).ready(function () {
                 outerDiv.appendChild(failinnerDiv2);
                 //append innerdiv3 to outerdiv
                 outerDiv.appendChild(failinnerDiv3);
-
-
+                
 
                 //-----------------------------------------------
                 //------create and style the row containers ----------
