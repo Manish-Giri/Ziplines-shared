@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
 
     //global variables
     var users = ["ESL_SC2", "ESL_CSGO", "freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "brunofin", "comster404", "test_channel", "cretetion", "sheevergaming", "TR7K", "OgamingSC2", "monstercat", "pink_sparkles"];
@@ -20,7 +20,7 @@ $(document).ready(function () {
     var offlineChannelsHidden = false;
     var closedChannelsHidden = false;
 
-    //function to create URL API call 
+    //function to create URL API call
     function prepareURL(type, name) {
         return baseURL + "/" + type + "/" + name;
     }
@@ -33,8 +33,8 @@ $(document).ready(function () {
     //function to make the API call
     var status = "";
     var name = "";
-    $.each(users, function (index, value) {
-        $.getJSON(prepareURL("streams", value), function (data) {
+    $.each(users, function(index, value) {
+        $.getJSON(prepareURL("streams", value), function(data) {
                 //console.log("------------------------");
 
                 //case 1 - channel is offline
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
                     //when a stream is offline, channel object is not returned
                     //so make another API call to get the channel object
-                    $.getJSON(prepareURL("channels", value), function (data) {
+                    $.getJSON(prepareURL("channels", value), function(data) {
 
                         //-----------------------------------------------
                         //------create and style the logo ----------
@@ -489,7 +489,7 @@ $(document).ready(function () {
 
             })
             //if channel is closed, it will return JSON containing error, message and status fields
-            .fail(function (err) {
+            .fail(function(err) {
 
                 name = value;
                 //status = "Account closed";
@@ -565,7 +565,7 @@ $(document).ready(function () {
                 outerDiv.appendChild(failinnerDiv2);
                 //append innerdiv3 to outerdiv
                 outerDiv.appendChild(failinnerDiv3);
-                
+
 
                 //-----------------------------------------------
                 //------create and style the row containers ----------
@@ -631,7 +631,8 @@ $(document).ready(function () {
     //-------------------------------------------------------------------------------------
 
     $("#all button").click(function() {
-       //show all channels
+        //show all channels
+        $(this).addClass("animated shake");
         $(".online-user, .offline-user, .closed-user").delay(600).slideDown();
         onlineChannelsHidden = false;
         offlineChannelsHidden = false;
@@ -642,15 +643,15 @@ $(document).ready(function () {
 
     $("#online button").click(function() {
         //if online channels are already hidden through slidetoggle in offline, unhide online and hide offline & closed
-        if(onlineChannelsHidden) {
+        $(this).addClass("animated shake");
+        if (onlineChannelsHidden) {
             $(".offline-user, .closed-user").slideUp();
             //$(".closed-user").hide();
             $(".online-user").delay(600).slideDown();
             onlineChannelsHidden = false;
             offlineChannelsHidden = true;
 
-        }
-        else {
+        } else {
             $(".offline-user, .closed-user").slideToggle("slow", function() {
                 offlineChannelsHidden = !offlineChannelsHidden;
             });
@@ -660,15 +661,26 @@ $(document).ready(function () {
 
     $("#offline button").click(function() {
         //if offline channels are already hidden through slidetoggle in online, unhide offline & hide online
-        if(offlineChannelsHidden) {
+        //if button has animated shake, remove and readd
+        if($(this).hasClass("animated shake")) {
+          $(this).removeClass("animated shake").delay(50).queue(
+            function() {
+              $(this).addClass("animated shake");
+            });
+          //$(this).addClass("animated shake");
+        }
+        else {
+          $(this).addClass("animated shake");
+        }
+
+        if (offlineChannelsHidden) {
             $(".online-user, .closed-user").slideUp();
             //$(".closed-user").hide();
             $(".offline-user").delay(600).slideDown();
 
             onlineChannelsHidden = true;
             offlineChannelsHidden = false;
-        }
-        else {
+        } else {
             $(".online-user, .closed-user").slideToggle("slow", function() {
                 onlineChannelsHidden = !onlineChannelsHidden;
             });
