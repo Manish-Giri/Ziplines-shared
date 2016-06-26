@@ -96,7 +96,7 @@ $(document).ready(function() {
                         //create child div with class="col-md-3" for holding logo
                         var innerDiv1 = createElement("div");
                         //innerDiv1.className = "col-md-2";
-                        innerDiv1.classList.add("col-md-offset-1", "col-md-2");
+                        innerDiv1.classList.add("col-xs-offset-1", "col-xs-2","col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
                         //append logo to innerDiv
                         innerDiv1.appendChild(logo);
 
@@ -107,7 +107,7 @@ $(document).ready(function() {
 
                         var innerDiv2 = createElement("div");
                         //innerDiv2.className = "col-md-2";
-                        innerDiv2.classList.add("col-md-offset-1", "col-md-3");
+                        innerDiv2.classList.add("col-xs-offset-1", "col-xs-4", "col-sm-offset-1", "col-sm-3","col-md-offset-1", "col-md-3");
                         innerDiv2.appendChild(userName);
 
 
@@ -116,7 +116,7 @@ $(document).ready(function() {
                         //-------------------------------------------------------
                         var innerDiv3 = createElement("div");
                         //innerDiv3.className = "col-md-2";
-                        innerDiv3.classList.add("col-md-offset-1", "col-md-2");
+                        innerDiv3.classList.add("col-xs-offset-1", "col-xs-2", "col-sm-offset-1", "col-sm-2","col-md-offset-1", "col-md-2");
                         innerDiv3.appendChild(channelStatus);
 
                         //append innerdiv1 to outerdiv
@@ -235,8 +235,6 @@ $(document).ready(function() {
                         logo.style.borderRadius = "100%";
                     }
 
-
-
                     //-----------------------------------------------
                     //------create and style the name ----------
                     //-----------------------------------------------
@@ -244,17 +242,12 @@ $(document).ready(function() {
                     userNameText = document.createTextNode(data.stream.channel.display_name);
                     userName.appendChild(userNameText);
 
-
-
-
                     //-----------------------------------------------
                     //------create and style the preview image ----------
                     //-----------------------------------------------
                     var preview = createElement("img");
                     preview.setAttribute("src", data.stream.preview.medium);
                     preview.style.height = "100px";
-
-
 
                     //-----------------------------------------------
                     //----the first outer row contents-------
@@ -270,30 +263,24 @@ $(document).ready(function() {
                     //create child div with class="col-md-3" for holding logo
                     var innerDiv1 = createElement("div");
                     //innerDiv1.className = "col-md-2";
-                    innerDiv1.classList.add("col-md-offset-1", "col-md-2");
+                    innerDiv1.classList.add("col-xs-offset-1", "col-xs-2", "col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
                     //append logo to innerDiv
                     innerDiv1.appendChild(logo);
-
 
                     //--------------------------------------------------------
                     //-------the inner div 2 holds the user name ----------
                     //-------------------------------------------------------
                     var innerDiv2 = createElement("div");
                     //innerDiv2.className = "col-md-2";
-                    innerDiv2.classList.add("col-md-offset-1", "col-md-3");
+                    innerDiv2.classList.add("col-xs-offset-1","col-xs-3", "col-sm-offset-1", "col-sm-3", "col-md-offset-1", "col-md-3");
                     innerDiv2.appendChild(userName);
-
-
 
                     //--------------------------------------------------------
                     //-------the inner div 2 holds the preview image ----------
                     //-------------------------------------------------------
                     var innerDiv3 = createElement("div");
-                    innerDiv3.classList.add("col-md-offset-2", "col-md-3");
+                    innerDiv3.classList.add("col-xs-offset-1","col-xs-4","col-sm-offset-1", "col-sm-4", "col-md-offset-2", "col-md-3");
                     innerDiv3.appendChild(preview);
-
-
-
 
                     //append innerdiv1 to outerdiv1
                     outerDiv1.appendChild(innerDiv1);
@@ -301,7 +288,6 @@ $(document).ready(function() {
                     outerDiv1.appendChild(innerDiv2);
                     //append innerdiv3(preview) to outerdiv1
                     outerDiv1.appendChild(innerDiv3);
-
 
                     //-----------------------------------------------
                     //      ROW 2 - game + status
@@ -315,7 +301,7 @@ $(document).ready(function() {
                     //-----------------------------------------------
                     var gameName = createElement("h2");
                     gameName.appendChild(document.createTextNode(data.stream.game));
-                    gameName.style.fontSize = "1.2em";
+                    gameName.style.fontSize = "1.4em";
 
                     //gameName.style.paddingLeft = "10px";
 
@@ -324,13 +310,13 @@ $(document).ready(function() {
                     //-----------------------------------------------
                     channelStatus = createElement("h2");
                     channelStatus.appendChild(document.createTextNode(data.stream.channel.status));
-                    channelStatus.style.fontSize = "1.0em";
+                    channelStatus.style.fontSize = "1.4em";
 
                     //-----------------------------------------------
                     //-------the second inner div 1 holds game name ----------
                     //-----------------------------------------------
                     var secondInnerDiv1 = createElement("div");
-                    secondInnerDiv1.classList.add("col-md-offset-2", "col-md-3", "online-game-name");
+                    secondInnerDiv1.classList.add("col-md-offset-1", "col-md-3", "online-game-name");
                     secondInnerDiv1.appendChild(gameName);
 
                     //-----------------------------------------------
@@ -338,62 +324,13 @@ $(document).ready(function() {
                     //-----------------------------------------------
                     var secondInnerDiv2 = createElement("div");
                     secondInnerDiv2.classList.add("col-md-7", "online-channel-status");
+                    secondInnerDiv2.style.textAlign = "left";
                     secondInnerDiv2.appendChild(channelStatus);
-
 
                     //append game name to outerdiv2
                     outerDiv2.appendChild(secondInnerDiv1);
                     //append game status to outerdiv2
                     outerDiv2.appendChild(secondInnerDiv2);
-
-
-                    //create a hover effect over outerdiv2 - increase font size on hover/decrease on mouseleave
-                    /*var $outerDiv2 = $(outerDiv2);
-                    $outerDiv2.hover(function() {
-                        //increase font size
-                        console.log("Inside hover in");
-                        gameName.style.fontSize = "1.6em";
-                        channelStatus.style.fontSize = "1.5em";
-
-                    }, function() {
-                        //reduce font size
-                        console.log("Inside hover out");
-                        gameName.style.fontSize = "1.2em";
-                        channelStatus.style.fontSize = "1.0em";
-                    });*/
-
-                    //create a hover effect over outerdiv2 - increase font size on hover/decrease on mouseleave
-                    /*
-                    var $secondInnerDiv1 = $(secondInnerDiv1);
-                    var $secondInnerDiv2 = $(secondInnerDiv2);
-                    $secondInnerDiv1.hover(function() {
-                       //increase font size
-                        console.log("Inside hover in for game name");
-                        gameName.style.fontSize = "1.6em";
-
-
-                    }, function() {
-                        //reduce font size
-                        console.log("Inside hover out for game name");
-                        gameName.style.fontSize = "1.2em";
-                        //channelStatus.style.fontSize = "1.0em";
-                    });
-
-                    $secondInnerDiv2.hover(function() {
-                        //increase font size
-                        console.log("Inside hover in for channel status");
-                        channelStatus.style.fontSize = "1.5em";
-
-
-                    }, function() {
-                        //reduce font size
-                        console.log("Inside hover out for channel status");
-                        channelStatus.style.fontSize = "1.0em";
-                    });*/
-
-
-
-
 
                     //-----------------------------------------------
                     //      ROW 3 - live + views + followers
@@ -411,7 +348,6 @@ $(document).ready(function() {
                     liveViewersCount = document.createTextNode(data.stream.viewers);
                     liveViewers.appendChild(liveViewersCount);
 
-
                     //-----------------------------------------------
                     //------create and style the total viewers ----------
                     //-----------------------------------------------
@@ -420,7 +356,6 @@ $(document).ready(function() {
                     totalViewersCount = document.createTextNode(data.stream.channel.views);
                     totalViewers.appendChild(totalViewersCount);
 
-
                     //-----------------------------------------------
                     //------create and style the total followers ----------
                     //-----------------------------------------------
@@ -428,7 +363,6 @@ $(document).ready(function() {
                     totalFollowers.appendChild(document.createTextNode("Followers " + "\u00A0" + ": " + "\u00A0"));
                     totalFollowersCount = document.createTextNode(data.stream.channel.followers);
                     totalFollowers.appendChild(totalFollowersCount);
-
 
                     //-----------------------------------------------
                     //-------the third inner div 1 holds live watching
@@ -459,9 +393,6 @@ $(document).ready(function() {
                     //append total followers to outerdiv3
                     outerDiv3.appendChild(thirdInnerDiv3);
 
-
-
-
                     //-----------------------------------------------
                     //------create and style the row containers ----------
                     //-----------------------------------------------
@@ -482,10 +413,7 @@ $(document).ready(function() {
 
                     $("#results-div").append(container);
 
-
                 }
-
-
 
             })
             //if channel is closed, it will return JSON containing error, message and status fields
@@ -556,7 +484,7 @@ $(document).ready(function() {
                 //-------------------------------------------------------
                 var failinnerDiv3 = createElement("div");
                 //innerDiv3.className = "col-md-2";
-                failinnerDiv3.classList.add("col-md-offset-1", "col-md-2");
+                failinnerDiv3.classList.add("col-md-offset-1", "col-md-3");
                 failinnerDiv3.appendChild(channelStatus);
 
                 //append innerdiv1 to outerdiv
@@ -650,11 +578,25 @@ $(document).ready(function() {
             $(".online-user").delay(600).slideDown();
             onlineChannelsHidden = false;
             offlineChannelsHidden = true;
+            closedChannelsHidden = true;
 
         } else {
-            $(".offline-user, .closed-user").slideToggle("slow", function() {
-                offlineChannelsHidden = !offlineChannelsHidden;
-            });
+            // $(".offline-user, .closed-user").slideToggle("slow", function() {
+            //     offlineChannelsHidden = !offlineChannelsHidden;
+            //     closedChannelsHidden = !closedChannelsHidden;
+            //     console.log("In online else, offline channels = " + offlineChannelsHidden);
+            //     console.log("In online else, closed channels = " + closedChannelsHidden);
+            // });
+              $(".offline-user, .closed-user").delay(600).slideUp();
+              offlineChannelsHidden = true;
+              closedChannelsHidden = true;
+
+
+
+            // $(".offline-user, .closed-user").slideUp();
+            // offlineChannelsHidden = true;
+            // closedChannelsHidden = true;
+
         }
 
     });
@@ -662,29 +604,37 @@ $(document).ready(function() {
     $("#offline button").click(function() {
         //if offline channels are already hidden through slidetoggle in online, unhide offline & hide online
         //if button has animated shake, remove and readd
-        if($(this).hasClass("animated shake")) {
-          $(this).removeClass("animated shake").delay(50).queue(
-            function() {
-              $(this).addClass("animated shake");
-            });
-          //$(this).addClass("animated shake");
-        }
-        else {
-          $(this).addClass("animated shake");
+        if ($(this).hasClass("animated shake")) {
+            $(this).removeClass("animated shake").delay(50).queue(
+                function() {
+                    $(this).addClass("animated shake");
+                });
+            //$(this).addClass("animated shake");
+        } else {
+            $(this).addClass("animated shake");
         }
 
         if (offlineChannelsHidden) {
             $(".online-user, .closed-user").slideUp();
             //$(".closed-user").hide();
             $(".offline-user").delay(600).slideDown();
-
-            onlineChannelsHidden = true;
             offlineChannelsHidden = false;
+            onlineChannelsHidden = true;
+            closedChannelsHidden = true;
+
+
         } else {
-            $(".online-user, .closed-user").slideToggle("slow", function() {
-                onlineChannelsHidden = !onlineChannelsHidden;
-            });
+            // $(".online-user, .closed-user").slideToggle("slow", function() {
+            //     onlineChannelsHidden = !onlineChannelsHidden;
+            //     closedChannelsHidden = !closedChannelsHidden;
+            // });
+            $(".online-user, .closed-user").delay(600).slideUp();
+            onlineChannelsHidden = true;
+            closedChannelsHidden = true;
+
+
         }
+
 
     });
 
