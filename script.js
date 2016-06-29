@@ -197,7 +197,7 @@ $(document).ready(function() {
                         $("#results-div").append(container);
 
 
-                    })
+                    });
 
                 } else {
 
@@ -558,9 +558,25 @@ $(document).ready(function() {
 
     //-------------------------------------------------------------------------------------
 
+    //-----------BUTTON CLICKS---------------------------
+    //function to make a button shake using setTimeout()
+    function shakeButton($button) {
+      console.log("Shaking button");
+      $button.removeClass("animated shake");
+      setTimeout(
+        function() {
+          $button.addClass("animated shake");
+        },
+        25
+      );
+    }
+
+
     $("#all button").click(function() {
         //show all channels
-        $(this).addClass("animated shake");
+        //$(this).addClass("animated shake");
+        shakeButton($(this));
+        
         $(".online-user, .offline-user, .closed-user").delay(600).slideDown();
         onlineChannelsHidden = false;
         offlineChannelsHidden = false;
@@ -581,7 +597,7 @@ $(document).ready(function() {
         } else {
             $(this).addClass("animated shake");
         }
-        
+
         if (onlineChannelsHidden) {
             $(".offline-user, .closed-user").slideUp();
             //$(".closed-user").hide();
