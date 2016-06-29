@@ -571,7 +571,17 @@ $(document).ready(function() {
 
     $("#online button").click(function() {
         //if online channels are already hidden through slidetoggle in offline, unhide online and hide offline & closed
-        $(this).addClass("animated shake");
+        //$(this).addClass("animated shake");
+        if ($(this).hasClass("animated shake")) {
+            $(this).removeClass("animated shake").delay(50).queue(
+                function() {
+                    $(this).addClass("animated shake");
+                });
+            //$(this).addClass("animated shake");
+        } else {
+            $(this).addClass("animated shake");
+        }
+        
         if (onlineChannelsHidden) {
             $(".offline-user, .closed-user").slideUp();
             //$(".closed-user").hide();
