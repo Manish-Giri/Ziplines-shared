@@ -574,9 +574,8 @@ $(document).ready(function() {
 
     $("#all button").click(function() {
         //show all channels
-        //$(this).addClass("animated shake");
+        //use function to shake button
         shakeButton($(this));
-        
         $(".online-user, .offline-user, .closed-user").delay(600).slideDown();
         onlineChannelsHidden = false;
         offlineChannelsHidden = false;
@@ -587,17 +586,8 @@ $(document).ready(function() {
 
     $("#online button").click(function() {
         //if online channels are already hidden through slidetoggle in offline, unhide online and hide offline & closed
-        //$(this).addClass("animated shake");
-        if ($(this).hasClass("animated shake")) {
-            $(this).removeClass("animated shake").delay(50).queue(
-                function() {
-                    $(this).addClass("animated shake");
-                });
-            //$(this).addClass("animated shake");
-        } else {
-            $(this).addClass("animated shake");
-        }
-
+        //use function to shake button
+        shakeButton($(this));
         if (onlineChannelsHidden) {
             $(".offline-user, .closed-user").slideUp();
             //$(".closed-user").hide();
@@ -617,29 +607,16 @@ $(document).ready(function() {
               offlineChannelsHidden = true;
               closedChannelsHidden = true;
 
-
-
             // $(".offline-user, .closed-user").slideUp();
             // offlineChannelsHidden = true;
             // closedChannelsHidden = true;
-
         }
-
     });
 
     $("#offline button").click(function() {
         //if offline channels are already hidden through slidetoggle in online, unhide offline & hide online
-        //if button has animated shake, remove and readd
-        if ($(this).hasClass("animated shake")) {
-            $(this).removeClass("animated shake").delay(50).queue(
-                function() {
-                    $(this).addClass("animated shake");
-                });
-            //$(this).addClass("animated shake");
-        } else {
-            $(this).addClass("animated shake");
-        }
-
+        //use function to shake button
+        shakeButton($(this));
         if (offlineChannelsHidden) {
             $(".online-user, .closed-user").slideUp();
             //$(".closed-user").hide();
@@ -647,7 +624,6 @@ $(document).ready(function() {
             offlineChannelsHidden = false;
             onlineChannelsHidden = true;
             closedChannelsHidden = true;
-
 
         } else {
             // $(".online-user, .closed-user").slideToggle("slow", function() {
@@ -657,12 +633,7 @@ $(document).ready(function() {
             $(".online-user, .closed-user").delay(600).slideUp();
             onlineChannelsHidden = true;
             closedChannelsHidden = true;
-
-
         }
-
-
     });
-
 
 });
