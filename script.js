@@ -464,7 +464,7 @@ $(document).ready(function() {
                 //create child div with class="col-md-3" for holding logo
                 var failinnerDiv1 = createElement("div");
                 //innerDiv1.className = "col-md-2";
-                failinnerDiv1.classList.add("col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
+                failinnerDiv1.classList.add("col-xs-offset-1", "col-xs-3", "col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
                 //append logo to innerDiv
                 failinnerDiv1.appendChild(logo);
 
@@ -475,7 +475,7 @@ $(document).ready(function() {
 
                 var failinnerDiv2 = createElement("div");
                 //innerDiv2.className = "col-md-2";
-                failinnerDiv2.classList.add("col-sm-offset-1", "col-sm-3","col-md-offset-1", "col-md-3");
+                failinnerDiv2.classList.add("col-xs-4", "col-sm-offset-1", "col-sm-3","col-md-offset-1", "col-md-3");
                 failinnerDiv2.appendChild(userName);
 
 
@@ -484,7 +484,7 @@ $(document).ready(function() {
                 //-------------------------------------------------------
                 var failinnerDiv3 = createElement("div");
                 //innerDiv3.className = "col-md-2";
-                failinnerDiv3.classList.add("col-sm-offset-1", "col-sm-4","col-md-offset-1", "col-md-3");
+                failinnerDiv3.classList.add("col-xs-4","col-sm-offset-1", "col-sm-4","col-md-offset-1", "col-md-3");
                 failinnerDiv3.appendChild(channelStatus);
 
                 //append innerdiv1 to outerdiv
