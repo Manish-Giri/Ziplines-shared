@@ -571,7 +571,7 @@ $(document).ready(function() {
       );
     }
 
-
+    //------ALL CHANNELS-------
     $("#all button").click(function() {
         //show all channels
         //use function to shake button
@@ -583,7 +583,7 @@ $(document).ready(function() {
 
     });
 
-
+    //------ONLINE CHANNELS-------
     $("#online button").click(function() {
         //if online channels are already hidden through slidetoggle in offline, unhide online and hide offline & closed
         //use function to shake button
@@ -613,6 +613,7 @@ $(document).ready(function() {
         }
     });
 
+    //------OFFLINE CHANNELS-------
     $("#offline button").click(function() {
         //if offline channels are already hidden through slidetoggle in online, unhide offline & hide online
         //use function to shake button
