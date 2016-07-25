@@ -110,3 +110,12 @@ body {
     font-size:40px !important;
     /*letter-spacing: 2px !important;*/
 }
+
+/* use media queries to override bootstrap xs styles for screens lesser than 710 px */
+
+@media screen and (max-width: 709px) {
+    .ultra-xs {
+        width: 100%;
+        text-align: center;
+    }
+}
