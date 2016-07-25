@@ -26,6 +26,22 @@ body {
     margin-top: 2%;
 }
 
+/* override .fa to make auto refresh icon float right */
+.fa {
+    float: right;
+    clear: left;
+}
+
+/* style the i icon to position it parallel to h1 */
+#auto-refresh-icon {
+    color: red;
+    text-align: right;
+    font-size: 0.5em !important;
+    position: relative;
+    right: 0;
+    top: 25px;
+
+}
 #channels {
     padding: 1%;
     font-family: 'Lobster', cursive;

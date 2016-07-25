@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    //enable tooltips
+    $('[data-toggle="tooltip"]').tooltip();
 
     //global variables
     var users = ["ESL_SC2", "ESL_CSGO", "freecodecamp", "storbeck", "terakilobyte", "habathcx", "RobotCaleb", "thomasballinger", "noobs2ninjas", "beohoff", "brunofin", "comster404", "test_channel", "cretetion", "sheevergaming", "TR7K", "OgamingSC2", "monstercat", "pink_sparkles"];
