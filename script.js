@@ -96,7 +96,7 @@ $(document).ready(function() {
                         //create child div with class="col-md-3" for holding logo
                         var innerDiv1 = createElement("div");
                         //innerDiv1.className = "col-md-2";
-                        innerDiv1.classList.add("col-xs-offset-1", "col-xs-2","col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
+                        innerDiv1.classList.add("ultra-xs", "col-xs-offset-1", "col-xs-2","col-sm-offset-1", "col-sm-2", "col-md-offset-1", "col-md-2");
                         //append logo to innerDiv
                         innerDiv1.appendChild(logo);
 
