@@ -639,17 +639,12 @@ $(document).ready(function() {
         }
     });
 
-    $("#auto-refresh-icon").click(function () {
-        var icolor = $(this).css("color");
-        console.log(icolor);
-        if(icolor == "rgb(255, 0, 0)") {
-            $(this).css("color", "green");
-        }
 
-        else if(icolor == "rgb(0, 128, 0)") {
-            $(this).css("color", "red");
-        }
-    });
-
+    //--------------SHOW FOOTER --------------------
+    var $footer = $("footer");
+    // if(!$footer.is(":visible")) {
+    //     $footer.fadeIn("slow");
+    // }
+    $footer.hide().delay(1500).fadeIn(2200);
 
 });

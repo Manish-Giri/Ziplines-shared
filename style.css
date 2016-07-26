@@ -4,6 +4,8 @@
 @import url(https://fonts.googleapis.com/css?family=Exo:700italic);
 @import url(https://fonts.googleapis.com/css?family=Iceland);
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=Mirza);
+
 body {
     background: url('twinkle_twinkle/twinkle_twinkle_@2X.png');
     padding-top: 70px;
@@ -81,6 +83,22 @@ body {
     color: #e3ecbf !important;
     font-size:40px !important;
     /*letter-spacing: 2px !important;*/
+}
+
+footer {
+    display: none;
+    color: lightblue;
+    font-size: 1.2em;
+    margin: 10px;
+    padding: 15px;
+}
+
+footer p {
+    margin: 5px auto;
+    text-align: center;
+    font-family: 'Mirza', cursive;
+    margin-top: 0px;
+
 }
 
 /* use media queries to override bootstrap xs styles for screens lesser than 710 px */
