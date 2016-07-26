@@ -639,5 +639,17 @@ $(document).ready(function() {
         }
     });
 
+    $("#auto-refresh-icon").click(function () {
+        var icolor = $(this).css("color");
+        console.log(icolor);
+        if(icolor == "rgb(255, 0, 0)") {
+            $(this).css("color", "green");
+        }
+
+        else if(icolor == "rgb(0, 128, 0)") {
+            $(this).css("color", "red");
+        }
+    });
+
 
 });

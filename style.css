@@ -26,55 +26,11 @@ body {
     margin-top: 2%;
 }
 
-/* override .fa to make auto refresh icon float right */
-.fa {
-    float: right;
-    clear: left;
-}
 
-/* style the i icon to position it parallel to h1 */
-#auto-refresh-icon {
-    color: red;
-    text-align: right;
-    font-size: 0.5em !important;
-    position: relative;
-    right: 0;
-    top: 25px;
-
-}
 #channels {
     padding: 1%;
     font-family: 'Lobster', cursive;
 }
-
-/*
-#search {
-    margin: 1%;
-    padding: 1%;
-}
-
-#search-input {
-    width: 250px;
-    height: 50px;
-    padding: 10px;
-    margin: 2px;
-    transition: width 0.5s ease-in-out;
-    margin-left: 80px;
-    margin-right: 20px;
-}
-
-#search-input:focus {
-    width: 350px;
-    outline-color: purple;
-    border: 1px solid purple;
-}
-
-#search div div span {
-    display: inline-block;
-    color: purple;
-    margin-left: 2%;
-    font-size: 1.6em;
-} */
 
 #results-div {
     padding: 10px;
